@@ -108,7 +108,8 @@ section{
 }
 
 .imagenSobreMi{
-  width:60%;
+  width:16rem;
+  height: 15rem;
 } 
 
 .tamanoImagenReferencia{
@@ -167,6 +168,7 @@ form{
   .card-deck {
     flex-direction: column;
   }
+
 }
 
 /*tablets*/
