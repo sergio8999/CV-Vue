@@ -11,7 +11,7 @@
             {"titulo":"Contacto","href":"#contacto","icono":"fas fa-envelope mr-2"}
         ],
         "sobreMi":{
-            "nombre":"Sergio Ruiz Jiménez","direccion":"C/ Pasaje de teba","correo":"sergio8999@gmail.com","telefono":"123456789", "descripcion":"Técnico superior en desarrollo de aplicaciones web con conocimientos en back-end y front-end, desarrollados a través de proyectos propios. Busco desarrollar mi carrera, contribuyendo con mis habilidades en HTML,Bootstrap, Javascript, Jquery y Vue para lograr diseños finales que satisfagan las necesidades y preferencias de los clientes.","imagen":"images/fotoCarnet.jpg"
+            "nombre":"Sergio Ruiz Jiménez", "nombreTitulo":"Sergio", "direccion":"C/ Pasaje de teba","correo":"sergio8999@gmail.com","telefono":"123456789", "descripcion":"Técnico superior en desarrollo de aplicaciones web con conocimientos en back-end y front-end, desarrollados a través de proyectos propios. Busco desarrollar mi carrera, contribuyendo con mis habilidades en HTML,Bootstrap, Javascript, Jquery y Vue para lograr diseños finales que satisfagan las necesidades y preferencias de los clientes.","imagen":"images/fotoCarnet.jpg"
         },
         "experienciaLaboral": [
             {"puesto":"Técnico en instalaciones electrotécnicas", "descripcion":"Revisión y realización de proyectos de media, baja tensión y centros de transformación.", "fecha":"03/2011 - 06/2011", "imagen":"images/acciona.jpg"},
