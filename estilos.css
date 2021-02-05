@@ -1,0 +1,223 @@
+:root{
+    --main-font:'Cuprum';
+    --alternate-font: sans-serif;
+    --font-size:16px;
+    --line-height:1.6;
+    --main-color:#a8a9b4;
+    --main-modal-color: rgba(0, 150, 217, .75);
+    --muted-color:rgba(168,169,180,1);
+    --second-color: #040b14;
+    --bg-color:#fff;
+    --text-color:#333;
+
+}
+/*inicializar a  mis valores*/
+html {
+    font-family: var(--main-font), var(--alternate-font);
+    font-size: var(--font-size);
+    line-height:  var(--line-height);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+  }
+  body {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: inherit;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position:relative;    
+  }
+ 
+
+/* cambios en bootstrap*/
+.bg-dark {
+  background-color:var(--second-color) !important;
+}
+
+.bg-light-color{
+  background-color: #f5f8fd;
+}
+
+.bg-blanco{
+  background-color: var(--bg-color);
+}
+
+.nav-link {
+  color: var(--main-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.nav-link:hover {
+  color: var(--bg-color);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: var(--bg-color);
+  background-color: inherit;
+}
+
+#redesSociales .navbar-brand{
+ color: var(--second-color);
+}
+
+.progress-bar{
+  background-color: var(--main-modal-color);
+}
+
+.progressIdioma{
+  width: 90%;
+  height: 2rem;
+}
+
+.modal-lg {
+  max-width: 900px;
+}
+
+/*mis estilos*/
+.nav-link > i{
+  margin-right: .5rem;
+  font-size: 1.3rem;
+}
+
+.nav-link:hover > i{
+  color: #149ddd;
+}
+
+.nav-pills .nav-link.active i,
+.nav-pills .show > .nav-link i{
+  color:  #149ddd;
+}
+
+#sideNav span{
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+main{
+  width: 100%;
+  margin-top: 5rem;
+}
+
+section{
+  width: 100%;
+}
+
+.imagenSobreMi{
+  width:60%;
+} 
+
+.tamanoImagenReferencia{
+  width: 10rem;
+  height: 10rem;
+}
+
+.imagenExperienciaLaboral{
+  width: 15%;
+  height: 12vh;
+}
+
+.imagenModal{
+  -o-object-fit:cover;
+     object-fit:cover;
+  -o-object-position: top;
+     object-position: top;
+  width:100%;
+  height:20rem;
+}
+
+.imagenIdioma{
+  width: 2rem;
+  height: 1.5rem;
+}
+
+.tamanoTituloIdioma{
+  width: 6rem;
+}
+
+.tamanoReferencia{
+    height: 100%;
+}
+
+form{
+  box-shadow: 0 0 3px 4px var(--main-color);
+}
+
+#enviar{
+  color: var(--bg-color);
+  background-color: var(--second-color);
+}
+
+/* Efectos vue */
+.list-enter-active, .list-leave-active{
+  transition: all 6s;
+}
+
+.list-enter, .list-leave-to{
+  opacity: 0;
+}
+
+/*media queries*/
+/*dispositivos pequeños*/
+@media (min-width: 576px) {
+  .card-deck {
+    flex-direction: column;
+  }
+}
+
+/*tablets*/
+@media (min-width: 768px) {
+  .card-deck {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/*desktop*/
+@media (min-width: 992px) {
+  #sideNav{
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 100vh;
+  }
+
+  main{
+    width: auto;
+    margin-left: 15rem;
+  }
+  
+  #sideNav .navbar-collapse {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 0;
+    width: 100%;
+    margin-bottom: auto;
+    margin-top: 12vh;
+  }
+  #sideNav .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item {
+    display: block;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+    display: block;
+  }
+
+  #redesSociales i{
+    font-size: 2rem;
+  }
+  .card-deck {
+    flex-direction: row;
+  }
+}

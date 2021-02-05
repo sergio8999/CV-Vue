@@ -1,0 +1,118 @@
+{
+    "es":{
+        "menu":[
+            {"titulo":"Sobre mi","href":"#sobreMi","icono":"far fa-user mr-2"},
+            {"titulo":"Exp. profesional","href":"#experienciaProfesional","icono":"fas fa-tools mr-2"},
+            {"titulo":"Educacion","href":"#educacion","icono":"fas fa-book-open mr-2"},
+            {"titulo":"Habilidades","href":"#habilidades","icono":"fas fa-brain mr-2"},
+            {"titulo":"Proyectos","href":"#proyectos","icono":"fas fa-project-diagram mr-2"},
+            {"titulo":"Idiomas","href":"#idiomas","icono":"fas fa-globe-americas mr-2"},
+            {"titulo":"Referencias","href":"#referencias","icono":"fas fa-comments mr-2"},
+            {"titulo":"Contacto","href":"#contacto","icono":"fas fa-envelope mr-2"}
+        ],
+        "sobreMi":{
+            "nombre":"Sergio Ruiz Jiménez","direccion":"C/ Pasaje de teba","correo":"sergio8999@gmail.com","telefono":"123456789", "descripcion":"Técnico superior en desarrollo de aplicaciones web con conocimientos en back-end y front-end, desarrollados a través de proyectos propios. Busco desarrollar mi carrera, contribuyendo con mis habilidades en HTML,Bootstrap, Javascript, Jquery y Vue para lograr diseños finales que satisfagan las necesidades y preferencias de los clientes.","imagen":"images/fotoCarnet.jpg"
+        },
+        "experienciaLaboral": [
+            {"puesto":"Técnico en instalaciones electrotécnicas", "descripcion":"Revisión y realización de proyectos de media, baja tensión y centros de transformación.", "fecha":"03/2011 - 06/2011", "imagen":"images/acciona.jpg"},
+            {"puesto":"Instalador de máquinaria y equipo eléctrico", "descripcion":"Montaje y/o reparación de maquinaria y aparatos electrónicos. Diseño de maquinaria industrial, asesoramiento técnico. desarrollo y ejecución de proyectos relacionados con la actividad industrial. mantenimientos industriales.", "fecha":"03/2009 - 06/2009", "imagen":"images/akron.jpg"}
+        ],
+        "educacion":[
+            {"titulo":"G.S. Sistemas de Regulación y Control Automáticos", "instituto":"I.E.S. Ave Maria - San Cristobal", "fecha":"2007 - 2009"},
+            {"titulo":"G.S. Instalaciones Electrotécnicas", "instituto":"I.E.S. Hermenegildo Lanz", "fecha":"2009 - 2011"},
+            {"titulo":"G.S. Desarrollo de Aplicacioes Web", "instituto":"I.E.S. Francisco Ayala", "fecha":"2020 - 2021"}
+        ],
+        "habilidades":[
+            {"nombre":"JavaScript", "tamano":"90"},
+            {"nombre":"HTML", "tamano":"90"},
+            {"nombre":"Jquery", "tamano":"90"},
+            {"nombre":"Vue", "tamano":"70"},
+            {"nombre":"Bootstrap", "tamano":"70"},
+            {"nombre":"PHP", "tamano":"60"}
+        ],
+        "proyectos":[
+            {"titulo":"Omdb API", "imagen":"images/omdb.jpg","dataTarget":"#miModal1"},
+            {"titulo":"Jungle Home", "imagen":"images/jungleHome.jpg","dataTarget":"#miModal2"},
+            {"titulo":"Landing Page", "imagen":"images/kart.jpg","dataTarget":"#miModal3"}
+        ],
+        "modales":[
+            {"titulo":"Omdb API", "linkProduccion":"https://sergio8999.github.io/Proyecto-api-jquery/","linkRepositorio":"https://github.com/sergio8999/Proyecto-api-jquery","imagenes":["/images/omdb1.jpg","/images/omdb2.jpg","/images/omdb3.jpg"],"resumen":"Proyecto sobre Omdb Api donde puede obtener los datos sobre el titulo de una pelicula e información detallada. Dispone de un botón para llegar al inicio con animación y scroll infinito hasta la última pelicula encontrada.","tecnologias":"HTML, CSS, JQUERY y Ajax.","id":"miModal1","tituloResumen":"Resumen: ","tituloProduccion":"Link producción: ","tituloRepositorio":"LinkRepositorio: ","tituloBoton":"Cerrar","boton":"Cerrar"},
+            {"titulo":"Jungle Home", "linkProduccion":"https://trucosuso.github.io/JungleHomeWeb/","linkRepositorio":"https://github.com/Trucosuso/JungleHomeWeb","imagenes":["/images/junglehome1.jpg","/images/junglehome2.jpg","/images/junglehome3.jpg"],"resumen":"Proyecto sobre página web de venta de plantas. Dispone de detalle de lista de plantas para comprar, detalle y descripcion de la planta qe se quiere comprar,sobre nosotros y contacto con un formulario. Sobre nosotros contiene informacion de la tienda y un mapa con la localización. Ademas teenemos dos botones con el cual podremos loguearnos o registrarnos. Este página web es responsiva donde en menu móvil dispone de un menú de hamburguesa.","tecnologias":"HTML, CSS, JQUERY, LeafletJS flexbox y grid.","id":"miModal2","tituloResumen":"Resumen: ","tituloProduccion":"Link producción: ","tituloRepositorio":"LinkRepositorio: ","tituloBoton":"Cerrar","boton":"Cerrar"},
+            {"titulo":"Landing Page", "linkProduccion":" https://sergio8999.github.io/Landing-page/","linkRepositorio":"https://github.com/sergio8999/Landing-page","imagenes":["/images/kart1.jpg","/images/kart2.jpg","/images/kart3.jpg"],"resumen":"Proyecto sobre landing page de karts. Contiene un hero con un video de fondo, información sobre los servicios y formulario de contacto. Esta realizada de forma responsive para vista móvil, tablet y pc.","tecnologias":"HTML, CSS, JQUERY, Ajax, flexbox y grid.","id":"miModal3","tituloResumen":"Resumen: ","tituloProduccion":"Link producción: ","tituloRepositorio":"LinkRepositorio: ","tituloBoton":"Cerrar","boton":"Cerrar"}
+        ],
+        "idiomas":[
+            {"idioma":"Español", "tamano":"100"},
+            {"idioma":"Ingles", "tamano":"60"},
+            {"idioma":"Francés", "tamano":"15"}
+        ],
+        "referencias":[
+            {"nombre":"D. Acciona","comentario":"Buen trabajador.", "imagen":"images/acciona.jpg"},
+            {"nombre":"D. Akron","comentario":"Buen trabajador y responsable.", "imagen":"images/akron.jpg"},
+            {"nombre":"Encargado Acciona","comentario":"Responsable en su trabajo.", "imagen":"images/acciona.jpg"}
+        ],
+        "contacto":{
+            "nombre":"Nombre", "holderNombre":"Escribe tu nombre", "email":"email","holderEmail":"Escriba su email", "asunto":"Asunto", "holderAsunto":"Asunto","comentarios":"Comentarios", "boton":"Enviar"
+        }
+    },
+    "en":{
+        "menu":[
+            {"titulo":"About me","href":"#sobreMi","icono":"far fa-user mr-2"},
+            {"titulo":"Professional exp.","href":"#experienciaProfesional","icono":"fas fa-tools mr-2"},
+            {"titulo":"Education","href":"#educacion","icono":"fas fa-book-open mr-2"},
+            {"titulo":"Skills","href":"#habilidades","icono":"fas fa-brain mr-2"},
+            {"titulo":"Projects","href":"#proyectos","icono":"fas fa-project-diagram mr-2"},
+            {"titulo":"Languages","href":"#idiomas","icono":"fas fa-globe-americas mr-2"},
+            {"titulo":"References","href":"#referencias","icono":"fas fa-comments mr-2"},
+            {"titulo":"Contact","href":"#contacto","icono":"fas fa-envelope mr-2"}
+        ],
+        "sobreMi":{
+            "nombre":"Sergio Ruiz Jiménez","direccion":"C/ Pasaje de teba","correo":"sergio8999@gmail.com","telefono":"123456789", "descripcion":"Senior technician in web application development with knowledge in back-end and front-end, developed through own projects. I am looking to develop my career, contributing my skills in HTML, Bootstrap, Javascript, Jquery and Vue to achieve final designs that meet the needs and preferences of clients.","imagen":"images/fotoCarnet.jpg"
+        },
+        "experienciaLaboral": [
+            {"puesto":"Technician in electrotechnical installations", "descripcion":"Review and implementation of medium and low voltage projects and transformation centers.", "fecha":"03/2011 - 06/2011", "imagen":"images/acciona.jpg"},
+            {"puesto":"Installer of machinery and electrical equipment", "descripcion":"Assembly and / or repair of machinery and electronic devices. Industrial machinery design, technical advice. development and execution of projects related to industrial activity. industrial maintenance.", "fecha":"03/2009 - 06/2009", "imagen":"images/akron.jpg"}
+        ],
+        "educacion":[
+            {"titulo":"G.S. Automatic Regulation and Control Systems", "instituto":"I.E.S. Ave Maria - San Cristobal", "fecha":"2007 - 2009"},
+            {"titulo":"G.S. Electrotechnical Installations", "instituto":"I.E.S. Hermenegildo Lanz", "fecha":"2009 - 2011"},
+            {"titulo":"G.S. Web applications development", "instituto":"I.E.S. Francisco Ayala", "fecha":"2020 - 2021"}
+        ],
+        "habilidades":[
+            {"nombre":"JavaScript", "tamano":"90"},
+            {"nombre":"HTML", "tamano":"90"},
+            {"nombre":"Jquery", "tamano":"90"},
+            {"nombre":"Vue", "tamano":"70"},
+            {"nombre":"Bootstrap", "tamano":"70"},
+            {"nombre":"PHP", "tamano":"60"}
+        ],
+        "proyectos":[
+            {"titulo":"Omdb API", "imagen":"images/omdb.jpg","dataTarget":"#miModal1"},
+            {"titulo":"Jungle Home", "imagen":"images/jungleHome.jpg","dataTarget":"#miModal2"},
+            {"titulo":"Landing Page", "imagen":"images/kart.jpg","dataTarget":"#miModal3"}
+        ],
+        "modales":[
+            {"titulo":"Omdb API", "linkProduccion":"https://sergio8999.github.io/Proyecto-api-jquery/","linkRepositorio":"https://github.com/sergio8999/Proyecto-api-jquery","imagenes":["/images/omdb1.jpg","/images/omdb2.jpg","/images/omdb3.jpg"],"resumen":"Project on Omdb Api where you can get the data about the title of a movie and detailed information. It has a button to get to the beginning with animation and infinite scroll until the last found movie.","tecnologias":"HTML, CSS, JQUERY y Ajax.","id":"miModal1","tituloResumen":"Resumen: ","tituloProduccion":"Link producción: ","tituloRepositorio":"LinkRepositorio: ","tituloBoton":"Cerrar","boton":"Close"},
+            {"titulo":"Jungle Home", "linkProduccion":"https://trucosuso.github.io/JungleHomeWeb/","linkRepositorio":"https://github.com/Trucosuso/JungleHomeWeb","imagenes":["/images/junglehome1.jpg","/images/junglehome2.jpg","/images/junglehome3.jpg"],"resumen":"Plant sale web page project. It has a detailed list of plants to buy, detail and description of the plant you want to buy, about us and contact with a form. About us contains information about the store and a map with the location. We also have two buttons with which we can log in or register. This website is responsive where the mobile menu has a hamburger menu.","tecnologias":"HTML, CSS, JQUERY, LeafletJS flexbox y grid.","id":"miModal2","tituloResumen":"Resumen: ","tituloProduccion":"Link producción: ","tituloRepositorio":"LinkRepositorio: ","tituloBoton":"Cerrar","boton":"Close"},
+            {"titulo":"Landing Page", "linkProduccion":" https://sergio8999.github.io/Landing-page/","linkRepositorio":"https://github.com/sergio8999/Landing-page","imagenes":["/images/kart1.jpg","/images/kart2.jpg","/images/kart3.jpg"],"resumen":"Go-kart landing page project. It contains a hero with a background video, information about the services and a contact form. It is made responsive for mobile, tablet and pc view.","tecnologias":"HTML, CSS, JQUERY, Ajax, flexbox y grid.","id":"miModal3","tituloResumen":"Resumen: ","tituloProduccion":"Link producción: ","tituloRepositorio":"LinkRepositorio: ","tituloBoton":"Cerrar","boton":"Close"}
+        ],
+        "idiomas":[
+            {"idioma":"Spanish", "tamano":"100"},
+            {"idioma":"English", "tamano":"60"},
+            {"idioma":"French", "tamano":"15"}
+        ],
+        "referencias":[
+            {"nombre":"D. Acciona","comentario":"Good worker.", "imagen":"images/acciona.jpg"},
+            {"nombre":"D. Akron","comentario":"Good worker and responsible.", "imagen":"images/akron.jpg"},
+            {"nombre":"Attendant Acciona","comentario":"Responsible in their work.", "imagen":"images/acciona.jpg"}
+        ],
+        "contacto":{
+            "nombre":"Name", "holderNombre":"Write your name", "email":"email","holderEmail":"Write your email", "asunto":"Issue", "holderAsunto":"Issue","comentarios":"Comments", "boton":"Send"
+        }
+    },
+    "redesSociales":[
+        {"nombre":"Github","icono":"fab fa-github","href":"https://github.com/sergio8999"},
+        {"nombre":"Linkedin","icono":"fab fa-linkedin-in","href":"https://www.linkedin.com/in/sergio-ruiz-jim%C3%A9nez-3a8319206/"},
+        {"nombre":"Twitter","icono":"fab fa-twitter","href":"#"},
+        {"nombre":"Facebook","icono":"fab fa-facebook-f","href":"#"}
+    ]
+}

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Curriculum Vitae</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+    <!-- css -->
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+  <body data-spy="scroll" data-target="#sideNav" >    
+    <div id="miApp">
+         <!--barra navegación-->
+        <nav id="sideNav" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"> 
+          <span  v-if="datosCV" class="d-block d-lg-none">{{datosSobreMi.nombre}}</span>
+          <div class="mt-lg-4">
+            <input id="es" v-on:click="idiomaEspanol" class="mr-2 imagenIdioma" type=image src="images/es.png" data-toggle="tooltip" data-placement="bottom" title="Español"> 
+            <input id="en" v-on:click="idiomaIngles" class="imagenIdioma" type=image src="images/en.png" data-toggle="tooltip" data-placement="bottom" title="Ingles"> 
+          </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="nav nav-pills flex-column">
+                  <transition-group name="list">
+                    <li class="nav-item" v-for="(dato,index) in datosMenu" v-bind:key="`menu-${index}`">
+                      <a class="nav-link" v-bind:href="dato.href"><i v-bind:class="dato.icono"></i>{{dato.titulo}}</a>
+                    </li>
+                  </transition-group>         
+            </div>
+        </nav>
+        <!-- Contenido -->
+        <main class="mt-1" v-if="datosCV">
+          <section id="sobreMi" class="p-3">
+            <h1 class="my-5 ml-md-5 text-sm-center text-md-left">{{datosMenu[0].titulo}}</h1>
+            <div class="row">
+              <div class="col-12 offset-md-2 col-md-8 col-lg-4 offset-lg-4 d-flex justify-content-between">
+                <img class="imagenSobreMi img-fluid rounded-circle mx-auto mb-2" v-bind:src="datosSobreMi.imagen" alt="" />
+              </div>
+            </div>
+            <!-- Redes sociales -->
+            <div  id="redesSociales" class="row">
+              <div class="col-12 offset-lg-3 col-lg-6 d-flex justify-content-center align-items-center">
+                <nav class="navbar navbar-light">
+                  <a class="navbar-brand p-2" target="_blank" v-for="(redSocial,index) in datosRedesSociales" v-bind:key="`redSocial-${index}`" v-bind:href="redSocial.href" data-toggle="tooltip" data-placement="bottom" v-bind:title="redSocial.nombre">
+                    <i v-bind:class="redSocial.icono"></i>
+                  </a>    
+                </nav>
+              </div>
+            </div>
+              <!-- Datos personales -->
+              <div class="row mt-4">
+              <div class="col-12 col-lg-4 offset-lg-4 d-flex flex-column align-items-center ">
+                <div>
+                  <h3>{{datosSobreMi.nombre}}</h3>
+                  <p><i class="fas fa-home mr-2 mt-2"></i>{{datosSobreMi.direccion}}</p>
+                  <p><i class="far fa-envelope mr-2"></i>{{datosSobreMi.correo}}</p>
+                  <p><i class="fas fa-phone-alt mr-2"></i>{{datosSobreMi.telefono}}</p>
+                </div>                
+              </div>
+            </div>
+            <div class="col-12 col-lg-10 offset-lg-1">
+              <h5>Descripcion:</h5>
+              <p>{{datosSobreMi.descripcion}}</p>
+            </div>
+          </section>
+
+          <!-- Experiencia profesional -->
+          <section id="experienciaProfesional" class=" p-3 bg-light-color">
+            <h1 class="my-5 ml-md-5 text-sm-center text-md-left">{{datosMenu[1].titulo}}</h1>
+            <div class="row">
+              <div class="col-12 col-lg-10 offset-lg-1">
+                <ul class="list-unstyled">
+                  <li class="media my-4" v-for="(datosExp,index) in datosExperienciaLaboral" v-bind:key="`datosExp-${index}`">
+                    <img class="imagenExperienciaLaboral mx-3" v-bind:src="datosExp.imagen" alt="Acciona">
+                    <div class="media-body">
+                      <h4 class="mt-0 mb-1">{{datosExp.puesto}}</h4>
+                      <p>{{datosExp.descripcion}}</p>
+                      <p><small>{{datosExp.fecha}}</small></p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            </section>
+
+            <!-- Educacion -->
+            <section id="educacion" class="p-3">
+              <h1 class="my-5 ml-md-5 text-sm-center text-md-left">{{datosMenu[2].titulo}}</h1>
+              <div class="row">
+                <div class="col-12 col-lg-8 offset-lg-2">
+                  <table class="table">
+                    <tr v-for="(datoEduccion,index) in datosEducacion" v-bind:key="`datoEducacion-${index}`">
+                      <td>
+                        <h4>{{datoEduccion.titulo}}</h4>
+                        <p>{{datoEduccion.instituto}}</p>
+                      </td>
+                      <td><small>{{datoEduccion.fecha}}</small></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section id="habilidades" class="p-3 bg-light-color">
+              <h1 class="my-5 ml-md-5 text-sm-center text-md-left">{{datosMenu[3].titulo}}</h1>
+              <div class="row">
+                <div class="col-12 col-lg-4 offset-lg-1" v-for="(datoHabilidad,index) in datosHabilidades" v-bind:key="`datoHabilidad-${index}`">
+                    <h5>{{datoHabilidad.nombre}}</h5>
+                    <div class="progress mb-4">
+                      <div class="progress-bar" role="progressbar" v-bind:aria-valuenow="datoHabilidad.tamano" aria-valuemin="0" aria-valuemax="100" v-bind:style="{width:datoHabilidad.tamano+'%'}">
+                        {{datoHabilidad.tamano}}%
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Proyectos -->
+            <section id="proyectos" class="p-3">
+              <h1 class="my-5 ml-md-5 text-sm-center text-md-left">{{datosMenu[4].titulo}}</h1>
+              <div class="row">
+                <div class="col-12 col-lg-10 offset-lg-1">
+                  <div class="card-deck">
+                    <div class="card mt-sm-4 mt-md-0" v-for="(proyecto,index) in datosProyectos" v-bind:key="`proyecto-${index}`">
+                      <a href="" data-toggle="modal" v-bind:data-target="proyecto.dataTarget">
+                        <img v-bind:src="proyecto.imagen" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">{{proyecto.titulo}}</h5>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal -->
+              <div v-for="(datoModal,index) in datosModal" v-bind:key="`datoModal-${index}`" class="modal fade" v-bind:id="datoModal.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{datoModal.titulo}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <p><b>{{datoModal.tituloProduccion}}</b><a v-bind:href="datoModal.linkProduccion" target="_blank">{{datoModal.linkProduccion}}</a></p>
+                    <p><b>{{datoModal.tituloProduccion}}</b><a v-bind:href="datoModal.linkRepositorio" target="_blank">{{datoModal.linkRepositorio}}</a></p>
+                    <p><b>{{datoModal.tituloResumen}}</b></p>
+                    <p>{{datoModal.resumen}}</p>
+                    <div class="row">
+                      <div class="col-12 col-lg-4 mt-3" v-for="(imagen,index) in datoModal.imagenes" v-bind:key="`imagen-${index}`">
+                          <img class="imagenModal" v-bind:src="imagen" alt="">
+                      </div>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">{{datoModal.tituloBoton}}</button>
+                    </div>
+                </div>
+                </div>
+            </div>    
+            </section>
+
+            <!-- Idiomas -->
+            <section id="idiomas" class="p-3 bg-light-color">
+              <h1 class="my-5 ml-md-5 text-sm-center text-md-left">{{datosMenu[5].titulo}}</h1>
+              <div class="row">
+                <div class="col-12 col-lg-10 offset-lg-1 d-flex justify-content-center" v-for="(idioma,index) in datosIdiomas" v-bind:key="`idioma-${index}`">
+                    <h4 class="tamanoTituloIdioma">{{idioma.idioma}}</h4>
+                    <div class=" progressIdioma progress mb-4 ml-3">
+                      <div class="progress-bar" role="progressbar" v-bind:aria-valuenow="idioma.tamano" aria-valuemin="0" aria-valuemax="100" v-bind:style="{width:idioma.tamano+'%'}">
+                        {{idioma.tamano}}%
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Referencias -->
+            <section id="referencias" class="p-3">
+              <h1 class="my-5 ml-md-5 text-sm-center text-md-left">{{datosMenu[6].titulo}}</h1>
+                <div class="row text-center mx-2">
+                  <div class="col-md-4 tamanoReferencia" v-for="(referencia,index) in datosReferencias" v-bind:key="`referencia-${index}`">
+                    <img v-bind:src="referencia.imagen" v-bind:alt="referencia.nombre" class="tamanoImagenReferencia img-fluid rounded-circle mx-auto mb-2">
+                    <h2>{{referencia.nombre}}</h2>
+                    <p>{{referencia.comentario}}</p>
+                  </div>
+                </div>
+            </section>
+
+            <!-- Contacto -->
+            <section id="contacto" class="p-3 pb-5 bg-light-color">
+              <h1 class="my-5 ml-md-5 text-sm-center text-md-left">{{datosMenu[7].titulo}}</h1>
+              <div class="row">
+                <form class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                  <div class="form-group">
+                    <legend class="p-3 text-center u-flowText text-dark">
+                    </legend>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">{{datosContacto.nombre}}</label>
+                    <input id="name" name="name" type="text" v-bind:placeholder="datosContacto.holderNombre" class="form-control" required>
+                  </div>
+                  <div class="form-grou
+                  p">
+                    <label for="email">{{datosContacto.email}}</label>
+                    <input id="email" name="email" type="email" v-bind:placeholder="datosContacto.holderEmail" class="form-control" required>
+                  </div>
+        
+                  <div class="form-group">
+                    <label for="subject">{{datosContacto.asunto}}</label>
+                    <input id="subject" name="subject" type="text" v-bind:placeholder="datosContacto.holderAsunto" class="form-control" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="comments">{{datosContacto.comentarios}}</label>
+                    <textarea name="comments" id="comments" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group text-center">
+                    <input id="enviar" type="submit" class="btn btn-lg" v-bind:value="datosContacto.boton">
+                  </div>
+                </form>
+              </div>
+            </section>
+        </main>
+        <main v-else>
+          <div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="sr-only text-center">Loading...</span>
+            </div>
+          </div>
+        </main>
+
+    </div>
+
+    
+    <!-- Vue -->
+    <script src="index.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
